@@ -752,6 +752,9 @@ decaylist = {
 'mg_pp_WZjj_HF_5f_84TeV':['zeewlep', 'wzlllv'],
 'mg_pp_tZj_5f_84TeV':['zeewlep'],
 'mg_pp_tWZj_5f_84TeV':['zee'],
+'mg_pp_tWZj_5f_OverlapRemoved_84TeV':['zee'],
+
+
 
 #bkgs to triple H analysis
 'mg_pp_ttbb_4f_84TeV':['tttautau'],
@@ -1828,7 +1831,7 @@ gridpacklist = {
 'mg_pp_lvlv_HT_7962_12619_5f_84TeV': ['', '', '', '1.80080790008e-05', '1.0', '1.0'],
 'mg_pp_lvlv_HT_12619_20000_5f_84TeV': ['', '', '', '7.0485853e-07', '1.0', '1.0'],
 'mg_pp_lvlv_HT_20000_84000_5f_84TeV': ['', '', '', '1', '1.0', '1.0'],
-'mg_pp_ttz01j_5f_84TeV': ['z associated with top pair + 0/1 jets', '', 'xqcut = 80, qCut = 120', '51.26704804', '1.0', '1.0'],
+'mg_pp_ttz01j_5f_84TeV': ['z associated with top pair + 0/1 jets', '', 'xqcut = 80, qCut = 120', '51.2604804', '1.0', '1.0'],
 'mg_pp_Htohh_mH_300GeV_84TeV': ['', '', '', '0.0011534', '1.0', '1.0'],
 'mg_pp_Htohh_mH_350GeV_84TeV': ['', '', '', '0.036689', '1.0', '1.0'],
 'mg_pp_Htohh_mH_400GeV_84TeV': ['', '', '', '0.078861', '1.0', '1.0'],
@@ -2345,7 +2348,7 @@ gridpacklist = {
 'mg_pp_WZjj_HF_5f_84TeV':['WZ boson pair plus heavy flavour jet pair @ 84 TeV', 'Only bb/cc jets', 'No jet matching', '4.0792e+00', '1.0', '1.0'],
 'mg_pp_tZj_5f_84TeV':['Top + Z boson + jet', 'Inclusive', 'No jet matching', '3.0689e+01', '1.0', '1.0'],
 'mg_pp_tWZj_5f_84TeV':['Top + W boson + Z boson + jet', 'Inclusive', 'No jet matching', '7.8073e+01', '1.0', '1.0'],
-'mg_pp_tWZj_5f_OverlapRemoved_84TeV':['Top + W boson + Z boson + jet - diagrams that overlap with ttZ removed with custom filter', 'Inclusive', 'No jet matching', '1.', '1.0', '1.0'],
+'mg_pp_tWZj_5f_OverlapRemoved_84TeV':['Top + W boson + Z boson + jet - diagrams that overlap with ttZ removed with custom filter', 'Inclusive', 'No jet matching', '2.9947e+01', '1.0', '1.0'],
 
 # new SM binned samples (using MG_v3 script)
 'mg_pp_tttt_Q_0_1000_5f_84TeV': ['', '', '', '0.03185003200000001', '1.0', '1.0'],
