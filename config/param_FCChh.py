@@ -2345,6 +2345,7 @@ gridpacklist = {
 'mg_pp_WZjj_HF_5f_84TeV':['WZ boson pair plus heavy flavour jet pair @ 84 TeV', 'Only bb/cc jets', 'No jet matching', '4.0792e+00', '1.0', '1.0'],
 'mg_pp_tZj_5f_84TeV':['Top + Z boson + jet', 'Inclusive', 'No jet matching', '3.0689e+01', '1.0', '1.0'],
 'mg_pp_tWZj_5f_84TeV':['Top + W boson + Z boson + jet', 'Inclusive', 'No jet matching', '7.8073e+01', '1.0', '1.0'],
+'mg_pp_tWZj_5f_OverlapRemoved_84TeV':['Top + W boson + Z boson + jet - diagrams that overlap with ttZ removed with custom filter', 'Inclusive', 'No jet matching', '1.', '1.0', '1.0'],
 
 # new SM binned samples (using MG_v3 script)
 'mg_pp_tttt_Q_0_1000_5f_84TeV': ['', '', '', '0.03185003200000001', '1.0', '1.0'],

@@ -45,8 +45,7 @@ class send_lhep8():
             sys.exit(3)
 
         # retrieve delphes card paths for FCC-hh case
-        if "FCChh" in self.para.module_name:
-
+        if "FCChh" in self.para.module_name and not "trackCov" in self.detector:
             delphescards_mmr='' #not sure this is really necessary, could clean up the code to not need it
             delphescards_emr=''
             delphescards_mr=''
@@ -94,6 +93,13 @@ class send_lhep8():
 
             if not os.path.isfile(delphescards_emr) and prod_version_num >= 5:
                 raise Exception("ERROR in param_FCChh - the card for track momentum resolution doesn't exist, at: "+delphescards_emr)
+        
+        #Support for TrackCov card only added for > v07 onwards
+        elif "FCChh" in self.para.module_name and "trackCov" in self.detector:
+            delphescards_base = os.path.join(self.para.delphescards_dir, self.version, self.detector, self.para.delphescard_base ).replace('DETECTOR',self.detector)
+
+            if not os.path.isfile(delphescards_base):
+                raise Exception("ERROR in param_FCChh - the base Delphes card doesn't exist, at: "+delphescards_base)
 
         # retrieve delphes card paths for FCC-ee case
         # 2021/09/08 :
@@ -200,7 +206,9 @@ class send_lhep8():
         if 'HELHC' in self.para.module_name:  acctype='HELHC'
         elif 'FCCee' in self.para.module_name:  acctype='FCCee'
 
-        logdir=Dir+"/BatchOutputs/%s/%s/%s/%s/"%(acctype,self.version,self.detector,processp8)
+        # logdir=Dir+"/BatchOutputs/%s/%s/%s/%s/"%(acctype,self.version,self.detector,processp8)
+        #TEMO OVERWRITE !!
+        logdir="/afs/cern.ch/work/b/bistapf/BatchOutputs/%s/%s/%s/%s/"%(acctype,self.version,self.detector,processp8)
 
         if not ut.dir_exist(logdir):
             os.system("mkdir -p %s"%logdir)
@@ -301,17 +309,19 @@ class send_lhep8():
             frun.write('python /afs/cern.ch/work/f/fccsw/public/FCCutils/eoscopy.py %s .\n'%(tmpf['processing']['out']))
             frun.write('gunzip -c %s > events.lhe\n'%tmpf['processing']['out'].split('/')[-1])          
             frun.write('python /afs/cern.ch/work/f/fccsw/public/FCCutils/eoscopy.py %s .\n'%(delphescards_base))
-            if 'fcc' in self.version and 'FCCee' not in self.para.module_name:
+            if "FCChh" in self.para.module_name and not "trackCov" in self.detector:
                 frun.write('python /afs/cern.ch/work/f/fccsw/public/FCCutils/eoscopy.py %s card.tcl\n'%(delphescards_base))
                 frun.write('python /afs/cern.ch/work/f/fccsw/public/FCCutils/eoscopy.py %s .\n'%(delphescards_mmr))
                 frun.write('python /afs/cern.ch/work/f/fccsw/public/FCCutils/eoscopy.py %s .\n'%(delphescards_mr))
                 if delphescards_emr:
                     frun.write('python /afs/cern.ch/work/f/fccsw/public/FCCutils/eoscopy.py %s .\n'%(delphescards_emr))
+            elif "FCChh" in self.para.module_name:
+                frun.write('python /afs/cern.ch/work/f/fccsw/public/FCCutils/eoscopy.py %s card.tcl\n'%(delphescards_base))
             if 'FCCee' not in self.para.module_name:
-                frun.write('python /afs/cern.ch/work/f/fccsw/public/FCCutils/eoscopy.py %s config.py \n'%(fccconfig))
+                # frun.write('python /afs/cern.ch/work/f/fccsw/public/FCCutils/eoscopy.py %s config.py \n'%(fccconfig))
                 #use the standard k4simdelphes edm4hep output config for FCC-hh production:
                 if self.custom_edm4hep_config:
-                    frun.write('cp {} .\n'.format(self.custom_edm4hep_config))
+                    frun.write('cp {} ./edm4hep_output_config.tcl \n'.format(self.custom_edm4hep_config))
                 else:
                     frun.write('cp $K4SIMDELPHES/edm4hep_output_config.tcl .\n')
             else:

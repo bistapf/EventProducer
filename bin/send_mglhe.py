@@ -10,7 +10,7 @@ import EventProducer.common.makeyaml as my
 class send_mglhe():
 
 #__________________________________________________________
-    def __init__(self, islsf, iscondor, mg5card, cutfile, model, para, procname, njobs, nev, queue, priority, ncpus, do_EL7, useV3=False):
+    def __init__(self, islsf, iscondor, mg5card, cutfile, model, para, procname, njobs, nev, queue, priority, ncpus, do_EL7, useV3=False, plugin=""):
         self.islsf     = islsf
         self.iscondor  = iscondor
         self.user      = os.environ['USER']
@@ -26,6 +26,7 @@ class send_mglhe():
         self.ncpus     = ncpus
         self.do_EL7    = do_EL7
         self.useV3     = useV3
+        self.plugin     = plugin
 
 #__________________________________________________________
     def send(self):
@@ -52,6 +53,10 @@ class send_mglhe():
         mg5card = os.path.abspath(self.mg5card)
         cuts    = os.path.abspath(self.cutfile)
         model   = os.path.abspath(self.model)
+        if self.plugin:
+            plugin   = os.path.abspath(self.plugin)
+        else:
+            plugin = ''
 
         jobsdir = './BatchOutputs/%s/lhe/%s/'%(acctype,self.procname)
 
@@ -88,7 +93,7 @@ class send_mglhe():
 
             if self.islsf==True :
               cmdBatch = 'bsub -o '+jobsdir+'/std/'+basename +'.out -e '+jobsdir+'/std/'+basename +'.err -q '+self.queue
-              cmdBatch +=' -J '+basename +' "'+script + mg5card+' '+self.procname+' '+outdir+' '+seed+' '+str(self.nev)+' '+cuts+' '+model+'"'
+              cmdBatch +=' -J '+basename +' "'+script + mg5card+' '+self.procname+' '+outdir+' '+seed+' '+str(self.nev)+' '+cuts+' '+model+' '+plugin+'"'
 
               print (cmdBatch)
 
@@ -96,7 +101,7 @@ class send_mglhe():
               job,batchid=ut.SubmitToLsf(cmdBatch,10,1)
               nbjobsSub+=job
             elif self.iscondor==True :
-              condor_file_params_str.append(mg5card+' '+self.procname+' '+outdir+' '+seed+' '+str(self.nev)+' '+cuts+' '+model)
+              condor_file_params_str.append(mg5card+' '+self.procname+' '+outdir+' '+seed+' '+str(self.nev)+' '+cuts+' '+model+' '+plugin+' ')
               nbjobsSub+=1
 
         if self.iscondor==True :

@@ -15,6 +15,7 @@ JOBID=${4}
 NEVENTS=${5}
 CUTFILE=${6}
 MODELFILE=${7}
+PLUGINFILE=${8:-""}
 
 mkdir job
 cd job
@@ -50,6 +51,19 @@ cp ${SCRIPTFILE} .
 
 echo "Copying script file ${SCRIPTFILE}"
 SCRIPT=$(basename $SCRIPTFILE)
+
+# if asking for custom plug in as well, copy it here:
+if [ -n "${PLUGINFILE}" ]; then
+    echo "Adding custom plug in code: $PLUGINFILE"
+    if [ -f "$PLUGINFILE" ]; then
+      cp ${PLUGINFILE} PLUGIN
+    else
+      echo "ERROR - requested plug in file not found at: $PLUGINFILE"
+    fi    
+else
+    echo "Not custom plug in file specified."
+fi
+
 
 SEED=$((10#$JOBID))
 

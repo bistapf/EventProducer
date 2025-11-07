@@ -63,6 +63,7 @@ def main():
     #option to run LHE production with MG in centos7 container 
     mgGroup.add_argument("--centos7", action='store_true', help="Legacy option to run MG5 LHE production in centos7 container.")
     mgGroup.add_argument("--useV3", action='store_true', help="option to run MG5 LHE production with V3.6.3pre of MG5.")
+    mgGroup.add_argument("--plugin", type=str, help="Custom plug in script", default='')
 
     kkmcGroup = parser.add_argument_group('kkmcgroup')
     kkmcGroup.add_argument("--kkmccard", type=str, help="KKMC input card", default='card')
@@ -274,7 +275,7 @@ def main():
 
                 print ('preparing to send lhe jobs from madgraph standalone for process {}'.format(args.process))
                 import EventProducer.bin.send_mglhe as mglhe
-                sendlhe=mglhe.send_mglhe( args.lsf, args.condor, args.mg5card, args.cutfile, args.model, para, args.process, args.numJobs, args.numEvents, args.queue, args.priority, args.ncpus, args.centos7, args.useV3)
+                sendlhe=mglhe.send_mglhe( args.lsf, args.condor, args.mg5card, args.cutfile, args.model, para, args.process, args.numJobs, args.numEvents, args.queue, args.priority, args.ncpus, args.centos7, args.useV3, args.plugin)
                 sendlhe.send()
 
             elif args.typelhe == 'kkmc' :
