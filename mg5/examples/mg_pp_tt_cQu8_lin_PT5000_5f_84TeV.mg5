@@ -1,4 +1,4 @@
-import model SMEFTatNLO-LOtt
+import model ./SMEFTatNLO-LOtt
 generate p p > t t~ QCD=2 QED=0 NP^2=2
 output DUMMYPROCESS
 
