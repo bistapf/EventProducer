@@ -1,0 +1,26 @@
+import model SMEFTatNLO-LOtt
+generate p p > t t~ QCD=2 QED=0 NP^2=4
+output DUMMYPROCESS
+
+######## DELIMITER (!!! NEED THIS LINE !!!) ##################
+
+launch DUMMYPROCESS
+
+set iseed DUMMYSEED
+set nevents DUMMYNEVENTS
+
+set ebeam1 42000
+set ebeam2 42000
+set ptheavy 5000.0
+
+set use_syst False
+set cQq83 1.0e-08
+set cQq81 1.0e-08
+set cQu8 1.0e-08
+set ctq8 1.0e-08
+set cQd8 1.0e-08
+set ctu8 1.0e-08
+set ctd8 1.0e-08
+set ctG 1.0
+
+done
