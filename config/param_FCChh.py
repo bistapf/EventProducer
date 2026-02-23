@@ -2657,7 +2657,8 @@ gridpacklist = {
 'mg_pp_vbfhh_lambda240_5f_84TeV':['VBF HH (qq->jjHH)','inclusive @ 84 TeV','No jet matching','6.1772e-02','1.147188','1.0'],
 'mg_pp_vbfhh_lambda300_5f_84TeV':['VBF HH (qq->jjHH)','inclusive @ 84 TeV','No jet matching','9.6531e-02','1.147188','1.0'],
 
-'mg_pp_uuddss_PTmin_5000_5f_84TeV': ['', '', '', '0.1593338', '1.0', '1.0'],
+# samples for high pT top tagging 
+'mg_pp_uuddss_PTmin_5000_5f_84TeV': ['', '', '', '1.5908e-01', '1.0', '1.0'],
 'mg_pp_gg_PTmin_5000_5f_84TeV': ['', '', '', '0.08595068', '1.0', '1.0'],
 'mg_pp_bb_PTmin_5000_5f_84TeV': ['', '', '', '0.001470931', '1.0', '1.0'],
 'mg_pp_cc_PTmin_5000_5f_84TeV': ['', '', '', '0.00154846', '1.0', '1.0'],
@@ -2668,6 +2669,31 @@ gridpacklist = {
 
 'mg_pp_thadtlep_PTmin_5000_5f_84TeV': ['', '', '', '0.0006180912480123649', '1.0', '1.0'],
 'mg_pp_tlepthad_PTmin_5000_5f_84TeV': ['', '', '', '0.0006224935616420689', '1.0', '1.0'],
+
+# EFT samples for top tagging analysis
+'mg_pp_tt_cQd8_lin_PT5000_5f_84TeV': ['SMEFT ttbar, cQd8 linear', 'pT > 5 TeV', 'No jet matching', '2.3320e-02', '1.0', '1.0'], 
+'mg_pp_tt_cQd8_quad_PT5000_5f_84TeV': ['SMEFT ttbar, cQd8 quadratic', 'pT > 5 TeV', 'No jet matching', '2.4678e+00', '1.0', '1.0'], 
+'mg_pp_tt_ctu8_lin_PT5000_5f_84TeV': ['SMEFT ttbar, ctu8 linear', 'pT > 5 TeV', 'No jet matching', '4.0371e-02', '1.0', '1.0'],
+'mg_pp_tt_ctu8_quad_PT5000_5f_84TeV': ['SMEFT ttbar, ctu8 quadratic', 'pT > 5 TeV', 'No jet matching',  '4.6111e+00', '1.0', '1.0'],  
+'mg_pp_tt_ctq8_lin_PT5000_5f_84TeV': ['SMEFT ttbar, ctq8 linear', 'pT > 5 TeV', 'No jet matching', '6.2093e-02', '1.0', '1.0'],  
+'mg_pp_tt_ctq8_quad_PT5000_5f_84TeV': ['SMEFT ttbar, ctq8 quadratic', 'pT > 5 TeV', 'No jet matching', '7.0576e+00', '1.0', '1.0'],  
+'mg_pp_tt_ctd8_lin_PT5000_5f_84TeV': ['SMEFT ttbar, ctd8 linear', 'pT > 5 TeV', 'No jet matching', '2.3329e-02', '1.0', '1.0'],  
+'mg_pp_tt_ctd8_quad_PT5000_5f_84TeV': ['SMEFT ttbar, ctd8 quadratic', 'pT > 5 TeV', 'No jet matching', '2.4667e+00', '1.0', '1.0'],  
+'mg_pp_tt_ctG_lin_PT5000_5f_84TeV': ['SMEFT ttbar, ctG linear', 'pT > 5 TeV', 'No jet matching', '2.0182e-03', '1.0', '1.0'],  
+'mg_pp_tt_ctG_quad_PT5000_5f_84TeV': ['SMEFT ttbar, ctG quadratic', 'pT > 5 TeV', 'No jet matching', '4.2244e-02', '1.0', '1.0'],  
+'mg_pp_tt_cQu8_lin_PT5000_5f_84TeV': ['SMEFT ttbar, cQu8 linear', 'pT > 5 TeV', 'No jet matching', '4.0383e-02', '1.0', '1.0'],  
+'mg_pp_tt_cQu8_quad_PT5000_5f_84TeV': ['SMEFT ttbar, cQu8 quadratic', 'pT > 5 TeV', 'No jet matching',  '4.6165e+00', '1.0', '1.0'],  
+'mg_pp_tt_cQq83_lin_PT5000_5f_84TeV': ['SMEFT ttbar, cQq83 linear', 'pT > 5 TeV', 'No jet matching', '1.8700e-02 ', '1.0', '1.0'],  
+'mg_pp_tt_cQq83_quad_PT5000_5f_84TeV': ['SMEFT ttbar, cQq83 quadratic', 'pT > 5 TeV', 'No jet matching', '7.0105e+00', '1.0', '1.0'],  
+'mg_pp_tt_cQq81_lin_PT5000_5f_84TeV': ['SMEFT ttbar, cQq81 linear', 'pT > 5 TeV', 'No jet matching', '6.2064e-02', '1.0', '1.0'],  
+'mg_pp_tt_cQq81_quad_PT5000_5f_84TeV': ['SMEFT ttbar, cQq81 quadratic', 'pT > 5 TeV', 'No jet matching',  '7.0539e+00', '1.0', '1.0'],
+
+#ttHH signal
+
+'mg_pp_tthh_lambda100_5f_84TeV':['ttHH with kl=1.0 @ 84 TeV','inclusive','No jet matching','1.0','1.378155','1.0'], #k-factor TBC
+'mg_pp_tthh_lambda000_5f_84TeV':['ttHH with kl=0.0 @ 84 TeV','inclusive','No jet matching','1.0','1.378155','1.0'], #k-factor TBC
+'mg_pp_tthh_lambda240_5f_84TeV':['ttHH with kl=2.4 @ 84 TeV','inclusive','No jet matching','1.0','1.378155','1.0'], #k-factor TBC
+'mg_pp_tthh_lambda300_5f_84TeV':['ttHH with kl=3.0 @ 84 TeV','inclusive','No jet matching','1.0','1.378155','1.0'], #k-factor TBC
 
 }
 ##Gridpack list for MG5@MC@NLO
