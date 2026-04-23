@@ -680,6 +680,12 @@ decaylist = {
 'pw_pp_hh_lambda300_5f_80TeV_SA':['hhbbaa','hhbbtata','hhbbbb','hhbbzz','hhbbzz_zleptonic', 'hhbbww', 'hhbbww_wleptonic', 'hhbbzz_4l'],
 'pw_pp_hh_lambda300_5f_100TeV_SA':['hhbbaa','hhbbtata','hhbbbb','hhbbzz','hhbbzz_zleptonic', 'hhbbww', 'hhbbww_wleptonic', 'hhbbzz_4l'],
 'pw_pp_hh_lambda300_5f_120TeV_SA':['hhbbaa','hhbbtata','hhbbbb','hhbbzz','hhbbzz_zleptonic', 'hhbbww', 'hhbbww_wleptonic', 'hhbbzz_4l'],
+#top associated dihiggs at new baseline: 
+'mg_pp_tthh_lambda100_5f_84TeV':['hhbbaa','hhbbtata','hhbbbb'],
+'mg_pp_tthh_lambda000_5f_84TeV':['hhbbaa','hhbbtata','hhbbbb'],
+'mg_pp_tthh_lambda240_5f_84TeV':['hhbbaa','hhbbtata','hhbbbb'],
+'mg_pp_tthh_lambda300_5f_84TeV':['hhbbaa','hhbbtata','hhbbbb'],
+
 ######
 
 #stop to top neutralino decays, need to specify one for each possible neutralino mass
@@ -2690,10 +2696,16 @@ gridpacklist = {
 
 #ttHH signal
 
-'mg_pp_tthh_lambda100_5f_84TeV':['ttHH with kl=1.0 @ 84 TeV','inclusive','No jet matching','1.0','1.378155','1.0'], #k-factor TBC
-'mg_pp_tthh_lambda000_5f_84TeV':['ttHH with kl=0.0 @ 84 TeV','inclusive','No jet matching','1.0','1.378155','1.0'], #k-factor TBC
-'mg_pp_tthh_lambda240_5f_84TeV':['ttHH with kl=2.4 @ 84 TeV','inclusive','No jet matching','1.0','1.378155','1.0'], #k-factor TBC
-'mg_pp_tthh_lambda300_5f_84TeV':['ttHH with kl=3.0 @ 84 TeV','inclusive','No jet matching','1.0','1.378155','1.0'], #k-factor TBC
+'mg_pp_tthh_lambda100_5f_84TeV':['ttHH with kl=1.0 @ 84 TeV','inclusive','No jet matching','4.3402e-02','1.','1.0'], #k-factor TBC, old samples had: 1.378155
+'mg_pp_tthh_lambda000_5f_84TeV':['ttHH with kl=0.0 @ 84 TeV','inclusive','No jet matching','3.6277e-02','1.','1.0'], #k-factor TBC
+'mg_pp_tthh_lambda240_5f_84TeV':['ttHH with kl=2.4 @ 84 TeV','inclusive','No jet matching','6.3341e-02','1.','1.0'], #k-factor TBC
+'mg_pp_tthh_lambda300_5f_84TeV':['ttHH with kl=3.0 @ 84 TeV','inclusive','No jet matching','7.5369e-02','1.','1.0'], #k-factor TBC
+
+# backgrounds for ttHH(bbyy) analysis:
+'mg_pp_ttaajj_HF_5f_84TeV':['ttyy with two heavy flavour jets (bb or cc) @ 84 TeV','bb and cc only, 105 < myy < 145 GeV','No jet matching','1.0','1.','1.0'], 
+'mg_pp_ttaaVV_5f_84TeV':['ttyy with two vector bosons @ 84 TeV','105 < myy < 145 GeV','No jet matching','1.0','1.','1.0'], 
+'mg_pp_ttttaa_5f_84TeV':['4 top with 2 photons @ 84 TeV','105 < myy < 145 GeV','No jet matching','1.0','1.','1.0'], 
+
 
 }
 ##Gridpack list for MG5@MC@NLO
