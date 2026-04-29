@@ -2,8 +2,8 @@ import model loop_sm-no_b_mass
 
 define top = t t~
 
-generate p p > top top a a b b~
-add process p p > top top a a c c~
+generate p p > top top a a b b~ QCD=4 QED=2
+add process p p > top top a a c c~ QCD=4 QED=2
 
 output DUMMYPROCESS
 
@@ -27,8 +27,13 @@ set maxjetflavor 5
 set mmaa 105.0
 set mmaamax 145.0
 
-set ptj 0
-set drjj -1.0
-set etaj -1.0 
+set ptb 20
+set etab 3.0
+set drbb 0.4
+set drbj 0.4
+set pta 20
+set etaa 5.0
+set draa 0.1
+set drab 0.1
 
 set use_syst False
