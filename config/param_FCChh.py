@@ -2702,7 +2702,7 @@ gridpacklist = {
 'mg_pp_tthh_lambda300_5f_84TeV':['ttHH with kl=3.0 @ 84 TeV','inclusive','No jet matching','7.5369e-02','1.','1.0'], #k-factor TBC
 
 # backgrounds for ttHH(bbyy) analysis:
-'mg_pp_ttaajj_HF_5f_84TeV':['ttyy with two heavy flavour jets (bb or cc) @ 84 TeV','bb and cc only, 105 < myy < 145 GeV','No jet matching','1.0','1.','1.0'], 
+'mg_pp_ttaajj_HF_5f_84TeV':['ttyy with two heavy flavour jets (bb or cc) @ 84 TeV','bb and cc only, 105 < myy < 145 GeV','No jet matching','9.5186e-04','1.','1.0'], 
 'mg_pp_ttaaVV_5f_84TeV':['ttyy with two vector bosons @ 84 TeV','105 < myy < 145 GeV','No jet matching','1.0','1.','1.0'], 
 'mg_pp_ttttaa_5f_84TeV':['4 top with 2 photons @ 84 TeV','105 < myy < 145 GeV','No jet matching','1.0','1.','1.0'], 
 
